@@ -51,6 +51,7 @@ let nivel = 0;
 }
 
 // Fim do código.
-// Max Cleiton
+
+// Max Cleiton.
 // https://github.com/maxxcleiton
-// 
+// https://www.linkedin.com/in/max-cleiton-4874a21b0/
