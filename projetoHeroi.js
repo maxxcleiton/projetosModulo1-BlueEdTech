@@ -50,7 +50,7 @@ let nivel = 0;
     console.log("É uma satisfação enorme, presenciar em minha miserável vida... tanta glória, persistência, e exemplo de valores íntegros como cidadão deste universo. Você não apenas foi lá e voltou para cá, você mudou o rumo do universo!!! mesmo que não saiba ainda...");
 }
 
-// Fim do código.
+// Fim de código.
 
 // Max Cleiton.
 // https://github.com/maxxcleiton
