@@ -10,11 +10,11 @@ console.log();
 console.log('Responda às perguntas com s ou n (sim ou não):');
 console.log();
 
-let pergunta1=prompt('Devolveu a criança a quem o pertencia? ');
-let pergunta2=prompt('Reparou sua nave, que estava precisando de uns belos reparos? ');
-let pergunta3=prompt('Conseguiu obter o material mais poderoso da galáxia? ');
-let pergunta4=prompt('Com este material, produziu com sucesso a sua armadura? ');
-let pergunta5=prompt('A lança, por ser um material concentrado, perfuraria sua própria armadura? ');
+let pergunta1 = prompt('Devolveu a criança a quem o pertencia? ');
+let pergunta2 = prompt('Reparou sua nave, que estava precisando de uns belos reparos? ');
+let pergunta3 = prompt('Conseguiu obter o material mais poderoso da galáxia? ');
+let pergunta4 = prompt('Com este material, produziu com sucesso a sua armadura? ');
+let pergunta5 = prompt('A lança, por ser um material concentrado, perfuraria sua própria armadura? ');
 
 let nivel = 0;
     if (pergunta1 == 's') {
