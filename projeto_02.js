@@ -19,15 +19,22 @@ const lista = ['pedra', 'papel', 'tesoura'];
 
 // Criar as variáveis que receberão as escolhas do usuário e do computador (prompt para o usuário, e aleatório para o computador);
 let rodadas = 0;
-let escolha = 
-let escolhaLow = 
+let escolha = '';
+let escolhaLow = [];
+let escolhaAlt = [];
+
 rodadas = +prompt('Escolha quantas rodadas iremos fazer: ');
 
-escolha = prompt('Pedra, papel, ou tesoura?')
+escolha = prompt('Pedra, papel, ou tesoura? ')
 escolhaLow = escolha.toLowerCase();
 
-while (rodadas) {
-
+if (escolhaLow == 'pedra') {
+    escolhaAlt.push(escolhaLow);
+    console.log(escolhaAlt)
+} else if (escolhaLow == 'papel') {
+    escolhaAlt.push(escolhaLow);
+    console.log(escolhaAlt)
+} else if (escolhaLow == 'tesoura') {
+    escolhaAlt.push(escolhaLow);
+    console.log(escolhaAlt)
 }
-
-if (rodadas = )
