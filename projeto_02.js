@@ -80,31 +80,64 @@ console.log(rMachine);
 //resultado da maquina é rMachine, contador maqPoints
 //resultado do usuario é escolhaAlt, contador userPoints
 
+// if (rMachine == 'tesoura' || escolhaAlt == 'papel') {
+//     maqPoints++
+//     console.log(`A máquina ganhou! Total de pontos da máquina: ${maqPoints}`)
+// }
+// if (rMachine == 'pedra' || escolhaAlt == 'tesoura') {
+//     maqPoints++
+//     console.log(`A máquina ganhou! Total de pontos da máquina: ${maqPoints}`);
+// }
+// if (rMachine == 'papel' || escolhaAlt == 'pedra') {
+//     maqPoints++
+//     console.log(`A máquina ganhou! Total de pontos da máquina: ${maqPoints}`);
+// }
+
+// let userPoints = 0;
+
+// //if's do usuário
+// if (escolhaAlt == 'tesoura' || rMachine == 'papel') {
+//     userPoints++
+//     console.log(`A máquina ganhou! Total de pontos da máquina: ${userPoints}`)
+// }
+// if (escolhaAlt == 'pedra' || rMachine == 'tesoura') {
+//     userPoints++
+//     console.log(`A máquina ganhou! Total de pontos da máquina: ${userPoints}`);
+// }
+// if (escolhaAlt == 'papel' || rMachine == 'pedra') {
+//     userPoints++
+//     console.log(`Você ganhou da máquina! Seu total de pontos: ${userPoints}`);
+// }
+
+// Resta testar pôr os ifs em else ifs da maquina, e adicionando um break, vou testar agora:
+let userPoints = 0;
+
 if (rMachine == 'tesoura' || escolhaAlt == 'papel') {
     maqPoints++
     console.log(`A máquina ganhou! Total de pontos da máquina: ${maqPoints}`)
-}
-if (rMachine == 'pedra' || escolhaAlt == 'tesoura') {
-    maqPoints++
-    console.log(`A máquina ganhou! Total de pontos da máquina: ${maqPoints}`);
-}
-if (rMachine == 'papel' || escolhaAlt == 'pedra') {
-    maqPoints++
-    console.log(`A máquina ganhou! Total de pontos da máquina: ${maqPoints}`);
-}
-
-let userPoints = 0;
-
-//if's do usuário
-if (escolhaAlt == 'tesoura' || rMachine == 'papel') {
+} else if (escolhaAlt == 'tesoura' || rMachine == 'papel') {
     userPoints++
     console.log(`A máquina ganhou! Total de pontos da máquina: ${userPoints}`)
 }
-if (escolhaAlt == 'pedra' || rMachine == 'tesoura') {
+
+
+if (rMachine == 'pedra' || escolhaAlt == 'tesoura') {
+    maqPoints++
+    console.log(`A máquina ganhou! Total de pontos da máquina: ${maqPoints}`);
+} else if (escolhaAlt == 'pedra' || rMachine == 'tesoura') {
     userPoints++
     console.log(`A máquina ganhou! Total de pontos da máquina: ${userPoints}`);
 }
-if (escolhaAlt == 'papel' || rMachine == 'pedra') {
+
+
+if (rMachine == 'papel' || escolhaAlt == 'pedra') {
+    maqPoints++
+    console.log(`A máquina ganhou! Total de pontos da máquina: ${maqPoints}`);
+} else if (escolhaAlt == 'papel' || rMachine == 'pedra') {
     userPoints++
     console.log(`Você ganhou da máquina! Seu total de pontos: ${userPoints}`);
 }
+
+// até então, tá falho
+// toda vez que executo, ele faz 2x ou 3x
+// depois resolver isso
