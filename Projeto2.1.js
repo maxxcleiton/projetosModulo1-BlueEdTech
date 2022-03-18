@@ -10,14 +10,17 @@ let cw = 0; // Contador de vitórias do computador
 let pa = ''; // Jogar novamente
 
 do {
+console.log();
 console.log('Jogo do pedra, papel e tesoura.\nModo: contra o computador\nSerá que você é capaz de derrotar sua própria máquina?\n\nVocê pode escolher: pedra, papel e tesoura.\n\nBoa sorte!');
+console.log(`--------`);
 console.log();
 
 r = +prompt('Digite o número de rodadas: ');
 console.log();
+
 for (let x = 0; x < r; x++) { // Criei um contador que gira até ficar menor que r.
 // Poderia usar while (r--) também
-
+console.log();
 u = prompt('Qual o elemento de sua escolha? ');
 console.log(`Você escolheu: ${u}`);
 console.log();
@@ -71,12 +74,20 @@ if (u == 'tesoura' && l[c] == 'tesoura') {
     console.log();
 } // if de empate
 
+console.log(`---------------------`);
 console.log(`Total de pontos humano: ${uw}`);
-console.log(`Total de pontos máquina: ${cw}`)
-console.log();
+console.log(`Total de pontos máquina: ${cw}`);
+console.log(`---------------------`);
 
 } // for
 
+if (uw > cw) { // Vencedor geral
+    console.log('Parabéns humano! você venceu a máquina.')
+} else if (cw > uw) {
+    console.log('O vencedor foi a máquina, é difícil mesmo vencer um super cérebro que processa milhões de informações e blá blá blá...');
+} // Vencedor geral
+
+console.log();
 pa = prompt(`Deseja jogar novamente? Digite sim ou não: `)
 console.log();
 
