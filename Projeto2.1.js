@@ -10,48 +10,75 @@ let cw = 0; // Contador de vitórias do computador
 let pa = ''; // Jogar novamente
 
 do {
+console.log('Jogo do pedra, papel e tesoura.\nModo: contra o computador\nSerá que você é capaz de derrotar sua própria máquina?\n\nVocê pode escolher: pedra, papel e tesoura.\n\nBoa sorte!');
+console.log();
 
-r = +prompt('Quantas rodadas iremos fazer? ');
-
+r = +prompt('Digite o número de rodadas: ');
+console.log();
 for (let x = 0; x < r; x++) { // Criei um contador que gira até ficar menor que r.
-// Posso usar while (r--)
+// Poderia usar while (r--) também
 
-u = prompt('Qual elemento que você escolhe? ');
-console.log(u)
+u = prompt('Qual o elemento de sua escolha? ');
+console.log(`Você escolheu: ${u}`);
+console.log();
 
 c = Math.floor(Math.random()*3);
-console.log(l[c])
+console.log();
+console.log('... (computador processando...)')
+console.log();
+console.log(`O computador escolheu: ${l[c]}`);
+console.log();
 
 // if do usuário
 if (u == 'tesoura' && l[c] == 'papel') {
     console.log('Vitória para você! ');
+    console.log();
     uw++
 } else if (u == 'pedra' && l[c] == 'tesoura') {
     console.log('Vitória para você! ');
+    console.log();
     uw++
 } else if (u == 'papel' && l[c] == 'pedra') {
     console.log('Vitória para você! ');
+    console.log();
     uw++
-}
+} // if do usuário
 
 // if do computador
 if (l[c] == 'tesoura' && u == 'papel') {
-    console.log('Vitória para o computador! ')
+    console.log('Vitória para o computador! ');
+    console.log();
     cw++
 } else if (l[c] == 'pedra' && u == 'tesoura') {
-    console.log('Vitória para o computador! ')
+    console.log('Vitória para o computador! ');
+    console.log();
     cw++
 } else if (l[c] == 'papel' && u == 'pedra') {
-    console.log('Vitória para o computador! ')
+    console.log('Vitória para o computador! ');
+    console.log();
     cw++
-}
+} // if do computador
 
-console.log(`Total pontos usuário: ${uw}`);
-console.log(`Total pontos computador: ${cw}`)
+// if de empate
+if (u == 'tesoura' && l[c] == 'tesoura') {
+    console.log('Empate.');
+    console.log();
+} else if (u == 'papel' && l[c] == 'papel') {
+    console.log('Empate.');
+    console.log();
+} else if (u == 'pedra' && l[c] == 'pedra') {
+    console.log('Empate.');
+    console.log();
+} // if de empate
 
-}
+console.log(`Total de pontos humano: ${uw}`);
+console.log(`Total de pontos máquina: ${cw}`)
+console.log();
+
+} // for
 
 pa = prompt(`Deseja jogar novamente? Digite sim ou não: `)
+console.log();
 
-} while (pa == 'sim');
+} while (pa == 'sim'); 
 
