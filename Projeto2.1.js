@@ -7,6 +7,9 @@ let c = []; // Escolha do computador
 let r = 0; // Rodadas (quantidade)
 let uw = 0; // Contador de vitórias do usuário
 let cw = 0; // Contador de vitórias do computador
+let pa = ''; // Jogar novamente
+
+do {
 
 r = +prompt('Quantas rodadas iremos fazer? ');
 
@@ -43,7 +46,12 @@ if (l[c] == 'tesoura' && u == 'papel') {
     cw++
 }
 
-}
-
 console.log(`Total pontos usuário: ${uw}`);
 console.log(`Total pontos computador: ${cw}`)
+
+}
+
+pa = prompt(`Deseja jogar novamente? Digite sim ou não: `)
+
+} while (pa == 'sim');
+
