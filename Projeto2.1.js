@@ -93,3 +93,9 @@ console.log();
 
 } while (pa == 'sim'); 
 
+
+// Fim de código.
+
+// Max Cleiton.
+// https://github.com/maxxcleiton
+// https://www.linkedin.com/in/max-cleiton-4874a21b0/
