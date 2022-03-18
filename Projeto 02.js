@@ -64,13 +64,13 @@ if (l[c] == 'tesoura' && u == 'papel') {
 
 // if de empate
 if (u == 'tesoura' && l[c] == 'tesoura') {
-    console.log('Empate.');
+    console.log('Deu empate');
     console.log();
 } else if (u == 'papel' && l[c] == 'papel') {
-    console.log('Empate.');
+    console.log('Deu empate');
     console.log();
 } else if (u == 'pedra' && l[c] == 'pedra') {
-    console.log('Empate.');
+    console.log('Deu empate');
     console.log();
 } // if de empate
 
@@ -84,7 +84,7 @@ console.log(`---------------------`);
 if (uw > cw) { // Vencedor geral
     console.log('Parabéns humano! você venceu a máquina.')
 } else if (cw > uw) {
-    console.log('O vencedor foi a máquina, é difícil mesmo vencer um super cérebro que processa milhões de informações e blá blá blá...');
+    console.log('O vencedor foi a máquina... É difícil mesmo, vencer um SUPER CÉREBRO! que processa trilhões de informações por segundo e blá blá blá...');
 } // Vencedor geral
 
 console.log();
