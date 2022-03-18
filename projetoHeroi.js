@@ -1,5 +1,4 @@
 var prompt = require('prompt-sync')();
-// npm i prompt-sync
 
 console.clear();
 
