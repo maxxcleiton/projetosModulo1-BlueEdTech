@@ -12,27 +12,6 @@ let tempo = {
     hora: 0,
 }
 
-// function tempo(tempoMais,tempoMenos){
-//     time.horas = time.horas + tempoMais
-//     time.horas = time.horas - tempoMenos
-//     console.log(`\nDia 0${i}, ${time.horas}:00.`);
-// }
-// function comida(comidaMais, comidaMenos){
-//     personagem.comida = personagem.comida + comidaMais
-//     personagem.comida = personagem.comida - comidaMenos
-//     console.log(`Comida disponível: ${personagem.comida}`);
-// }
-// function fome(fomeMais, fomeMenos){
-//     personagem.fome = personagem.fome + fomeMais
-//     personagem.fome = personagem.fome - fomeMenos
-//     console.log(`Fome: ${personagem.fome}`);
-//     if (personagem.fome < 0){
-//         console.log(`Você está desperdiçando comida!`);
-//     }
-//     if (personagem.fome > 15){
-        
-//     }
-// }
 // function manha7h(){
 //     console.log(`\n1.   Tomar café (com o que tem disponível) (3h)\n   -2 comida\n   -2 fome\n2.   Assistir Netflix (6h)\n   +2 fome\n3.   Treino físico (3h) \n   +2 fome\n4.   Ficar na cama se lamentando (12h)\n   +4 fome`);
 //     let manhaEscolha1 = +prompt()
