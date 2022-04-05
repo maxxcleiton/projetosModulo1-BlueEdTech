@@ -11,6 +11,48 @@ console.log();
 // aprendi a fazer arrow functions (adianto danado)
 // ==> falto adicionar o adicionar.maisDia() em alguns lugares
 
+// criei finalmente um objeto pro gameover
+// falta testar
+// while true nao funfou, falto testar o do..while ()
+let test = {
+    gameover1: () => {
+        while (true){
+        if (personagem.vida < 0){
+        console.log(`Game over! Motivo: sem vida! (< 0)`);
+        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+        jogarNovamente = +prompt();
+        if (jogarNovamente == 1){
+            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
+            continue
+        } else if (jogarNovamente == 2) {
+            break
+        };
+    }
+        if (personagem.segurança < 0){
+        console.log(`Game over! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
+        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+        jogarNovamente = +prompt();
+        if (jogarNovamente == 1){
+            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
+            continue
+        } else if (jogarNovamente == 2) {
+            break
+        };
+    }
+        if (personagem.fome > 20){
+        console.log(`Game over! Motivo: Morreu de fome (kkk)! (> 20)`);
+        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+        jogarNovamente = +prompt();
+        if (jogarNovamente == 1){
+            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
+            continue
+        } else if (jogarNovamente == 2) {
+            break
+        };
+    }// if   
+         } //while
+},
+};whik
 
 let alteraTempo = {
     somarArrayDia: (array, numero) => {
@@ -222,6 +264,7 @@ historias.ligação();
 while (tempo[0] == 1){
 
         // personagem.stats(); //escolhi colocar na funcao das escolhas
+        test.gameover1() // colocando de teste (lembrar que coloquei la embaixo)
 
         historias.sejaBemVindo();
 
@@ -253,41 +296,42 @@ while (tempo[0] == 1){
         // };
 
         // Variáveis de encerramento
-        if (personagem.vida < 0){
-            console.log(`Game over! Motivo: sem vida! (< 0)`);
-            console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-            jogarNovamente = +prompt();
-            if (jogarNovamente == 1){
-                tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-                continue
-            } else if (jogarNovamente == 2) {
-                break
-            };
-        };
+        test.gameover1() // vou testar
+        // if (personagem.vida < 0){
+        //     console.log(`Game over! Motivo: sem vida! (< 0)`);
+        //     console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+        //     jogarNovamente = +prompt();
+        //     if (jogarNovamente == 1){
+        //         tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
+        //         continue
+        //     } else if (jogarNovamente == 2) {
+        //         break
+        //     };
+        // };
 
-        if (personagem.segurança < 0){
-            console.log(`Game over! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
-            console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-            jogarNovamente = +prompt();
-            if (jogarNovamente == 1){
-                tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-                continue
-            } else if (jogarNovamente == 2) {
-                break
-            };
-        };
+        // if (personagem.segurança < 0){
+        //     console.log(`Game over! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
+        //     console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+        //     jogarNovamente = +prompt();
+        //     if (jogarNovamente == 1){
+        //         tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
+        //         continue
+        //     } else if (jogarNovamente == 2) {
+        //         break
+        //     };
+        // };
 
-        if (personagem.fome > 20){
-            console.log(`Game over! Motivo: Morreu de fome (kkk)! (> 20)`);
-            console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-            jogarNovamente = +prompt();
-            if (jogarNovamente == 1){
-                tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-                continue
-            } else if (jogarNovamente == 2) {
-                break
-            };
-        };
+        // if (personagem.fome > 20){
+        //     console.log(`Game over! Motivo: Morreu de fome (kkk)! (> 20)`);
+        //     console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+        //     jogarNovamente = +prompt();
+        //     if (jogarNovamente == 1){
+        //         tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
+        //         continue
+        //     } else if (jogarNovamente == 2) {
+        //         break
+        //     };
+        // };
 
 
 
@@ -412,45 +456,3 @@ while (tempo[0] == 1){
     };
     };
 };
-
-// criei finalmente um objeto pro gameover
-// falta testar
-let test = {
-    gameover1: () => {
-        while (true){
-        if (personagem.vida < 0){
-        console.log(`Game over! Motivo: sem vida! (< 0)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    }
-        if (personagem.segurança < 0){
-        console.log(`Game over! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    }
-        if (personagem.fome > 20){
-        console.log(`Game over! Motivo: Morreu de fome (kkk)! (> 20)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    }// if   
-         } //while
-},
-}
