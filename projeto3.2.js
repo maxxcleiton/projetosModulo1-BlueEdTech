@@ -150,15 +150,13 @@ Meu Deus! um zumbi! preciso desligar aqui maninho, me liga quando puder!!"
 //     }
 // }
     /////////////////////////////////////////////////////////////////////////////////////////////
-    const prompt = require('prompt-sync')();
-console.clear();
 
 // Código faz:
 // Inicia no dia 1, termina no dia 4 (quando é recuperado pelo helicóptero)
 // Quando morre de fome, ou perde a vida, recomeça no dia 1 do começo
 // Quando vence o jogo, ele pergunta se quer jogar novamente ou não
 
-let tempo = 0
+let tempo1 = 0
 let dia = 1
 let hora = 0
 let vida = 10
