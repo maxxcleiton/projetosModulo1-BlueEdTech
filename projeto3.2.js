@@ -13,7 +13,7 @@ let tempo = {
 }
 
 // function manha7h(){
-//     console.log(`\n1.   Tomar café (com o que tem disponível) (3h)\n   -2 comida\n   -2 fome\n2.   Assistir Netflix (6h)\n   +2 fome\n3.   Treino físico (3h) \n   +2 fome\n4.   Ficar na cama se lamentando (12h)\n   +4 fome`);
+//     console.log(`\n1.   Tomar café (com o que tem disponível) (3h)\n  -10 fome\n2.   Assistir Netflix (6h)\n	 + 5 fome\n3.   Treino físico (3h) \n  +5 fome\n4.   Ficar na cama se lamentando (12h)\n  +10 fome`);
 //     let manhaEscolha1 = +prompt()
 //     if (manhaEscolha1 == 1){
 //         tempo(3,0)
