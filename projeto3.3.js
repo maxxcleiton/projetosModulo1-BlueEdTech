@@ -7,7 +7,7 @@ console.log();
 // Quando vence o jogo, ele pergunta se quer jogar novamente ou não
 // Adicionei com sucesso os arrays 
 // arrumar a logica de mortes
-// 
+// código arrumado, agora é adicionar a historia
 
 let alteraTempo = {
     somarArrayDia: function(array,numero){ 
@@ -123,7 +123,7 @@ while (tempo[0] == 1){
         tempo[1] = +prompt('bote uma hora: ')
         personagem.vida = +prompt('bote um valor de vida: ') //alterar pra variaveis que modificam a vida
         personagem.fome= +prompt('bote um valor de fome: ')
-        personagem.segurança = +prompt(`bote um valor de segurança (atual: ${personagem[2]}): `)
+        personagem.segurança = +prompt(`bote um valor de segurança (atual: ${personagem.segurança}): `)
 
     if (tempo[1] > 23){
         tempo[0] = 3
