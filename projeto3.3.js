@@ -24,16 +24,6 @@ let alteraTempo = {
         array.splice(1, 1, nn); // 0 indice/1 n. itens excluidos/nn variavel operacao
         return array[1];
     },
-    subtrairArrayDia: (array, numero) => {
-        let nn = array[0] - numero; // array desejada de alteracao
-        array.splice(0, 1, nn); // 0 indice/1 n. itens excluidos/nn variavel operacao
-        return array[0];
-    },
-    subtrairArrayHora: (array, numero) => {
-        let nn = array[1] - numero; // array desejada de alteracao
-        array.splice(1, 1, nn); // 0 indice/1 n. itens excluidos/nn variavel operacao
-        return array[1];
-    },
 };
 
 let adicionarHora = {
@@ -54,37 +44,30 @@ let adicionarHora = {
             tempo[1] = tempo[1] - 24
             };
     },
-    maisDia1: () => {
-        if (tempo[1] > 23){
-            tempo[0] = 2
-            tempo[1] = 0
-            };
-    },
-    maisDia2: () => {
-        if (tempo[1] > 23){
-            tempo[0] = 3
-            tempo[1] = 0
-        };
-    },
-    maisDia3: () => {
-        if (tempo[1] > 23){
-            tempo[0] = 4
-            tempo[1] = 0
-        };
-    },
 };
 
 let personagem = {
     nome: ``,
-    fome: 15,
-    vida: 10,
+    fome: 10,
     segurança: 5,
     stats: () => {
         console.log();
         console.log(`------------------------------`);
         console.log(`Dia ${tempo[0]} Hora ${tempo[1]}:00`);
-        console.log(`Vida: ${personagem.vida} | Segurança: ${personagem.segurança} | Fome: ${personagem.fome}`);
+        console.log(`Fome: ${personagem.fome} | Segurança: ${personagem.segurança}`);
         console.log();
+    },
+    somaFome: (numero) => {
+        personagem.fome = personagem.fome + numero;
+    },
+    menosFome: (numero) => {
+        personagem.fome = personagem.fome - numero;
+    },
+    somaSegurança: (numero) => {
+        personagem.segurança = personagem.segurança + numero
+    },
+    menosSegurança: (numero) => {
+        personagem.segurança = personagem.segurança - numero
     },
 };
 
@@ -140,7 +123,7 @@ let historias = {
             // }
         }
     }
-},
+    },
     introdução: () => {
         console.log(`Você acorda numa manhã normal de domingo...
         \nvocê vai, toma um banho, escova seus dentes...
@@ -166,220 +149,166 @@ let historias = {
         console.log(`"Você no momento está sozinho, e precisa sobreviver até o 4 dia, que é quando o helicóptero virá para seu resgate."
 - Boa sorte!`);
         console.log();
-        console.log('- O tempo vai andar de acordo com suas escolhas, não deixe o personagem morrer!\n- Você morre se: vida (< 0) | segurança (< 0) | fome (> 20)');
+        console.log('- O tempo vai andar de acordo com suas escolhas, não deixe o personagem morrer!\n- Você morre se: fome (> 20) | segurança (< 0)');
         console.log();
     },
-    manhã7h: () => {
+    escolhas: () => {
         personagem.stats();
-        console.log(`\n1.   Tomar café (com o que tem disponível) (3h)\n  -10 fome\n2.   Assistir Netflix (6h)\n  + 5 fome\n3.   Treino físico (3h) \n  +5 fome\n4.   Ficar na cama se lamentando (12h)\n  +10 fome`);
+        console.log(`\n1.   Comer (com o que tem disponível) (3h)\n  -10 fome  -1 segurança\n\n2.   Assistir Netflix (6h)\n  +5 fome  -2 segurança\n\n3.   Treino físico (3h) \n  +5 fome  -1 segurança\n\n4.   Ficar na cama se lamentando (12h)\n  +10 fome -3 segurança\n\n5.   Reforçar trancas e portas da casa (4h)\n  +5 fome  +5 segurança\n\n6. Dormir (8h)\n  +5 fome  -2 segurança`);
         let manhaEscolha1 = +prompt();
-        if (manhaEscolha1 == 1) { // 1.   Tomar café (com o que tem disponível)
+        if (manhaEscolha1 == 1) {
             adicionarHora.maisHora(3);
-            adicionarHora.maisDia() // aplicar em todas perguntas
-            personagem.fome = personagem.fome - 10;
+            personagem.menosSegurança(1);
+            personagem.menosFome(10);
+            adicionarHora.maisDia();
+
             console.log(`\nUfa, agora que eu comi, me sinto melhor para fazer outras coisas.`);
             prompt(`\nVoltar menu principal (qualquer tecla)__`);
-            historias.manhã7h();
         } else if (manhaEscolha1 == 2) {
             adicionarHora.maisHora(6);
-            adicionarHora.maisDia() // aplicar em todas perguntas
-            personagem.fome = personagem.fome + 5;
+            personagem.menosSegurança(2);
+            personagem.somaFome(5)
+            adicionarHora.maisDia();
+
             console.log(`\nUm Netflix aqui para esquecer um pouco dos problemas.`);
             prompt(`\nVoltar menu principal (qualquer tecla)__`);
-            historias.manhã7h();
         } else if (manhaEscolha1 == 3) {
             adicionarHora.maisHora(3);
-            adicionarHora.maisDia() // aplicar em todas perguntas
-            personagem.fome = personagem.fome + 5;
+            personagem.menosSegurança(1);
+            personagem.somaFome(3);
+            adicionarHora.maisDia();
+
             console.log(`\nUfa, um exercício físico alivia o stress do que está acontecendo.`);
             prompt(`\nVoltar menu principal (qualquer tecla)__`);
-            historias.manhã7h();
         } else if (manhaEscolha1 == 4) {
             adicionarHora.maisHora(12);
-            adicionarHora.maisDia() // aplicar em todas perguntas
-            personagem.fome = personagem.fome + 10;
+            personagem.menosSegurança(3);
+            personagem.somaFome(10);
+            adicionarHora.maisDia();
+
             console.log(`Já chorei o que tinha que chorar, e agora?`);
             prompt(`\nVoltar menu principal (qualquer tecla)__`);
-            historias.manhã7h();
-            // if (time.horas > 23){
-            //     i++}
-        }
+        } else if (manhaEscolha1 == 5) {
+            adicionarHora.maisHora(4);
+            personagem.somaSegurança(5);
+            personagem.somaFome(5);
+            adicionarHora.maisDia();
+
+            console.log(`Proteção da casa garantida! (por enquanto)`);
+            prompt(`\nVoltar menu principal (qualquer tecla)__`);
+        } else if (manhaEscolha1 == 6) {
+            adicionarHora.maisHora(8);
+            personagem.menosSegurança(2);
+            personagem.somaFome(5);
+            adicionarHora.maisDia();
+
+            console.log(`Dormi com medo, mas dormi.`);
+            prompt(`\nVoltar menu principal (qualquer tecla)__`);
+    };
     },
 };
 
-
-
 let tempo = [1, 7] // Dia e Hora
 let jogarNovamente;
-let playagain;
 
 // Início da história
-
 historias.introdução();
 
 historias.ligação();
 
+historias.sejaBemVindo();
 
+// Início do game
 while (tempo[0] == 1){
+    historias.escolhas();
 
-        historias.sejaBemVindo();
+    // Variáveis de encerramento
+    if (personagem.segurança < 0){
+                console.log(`\nVocê morreu! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
+                console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+                jogarNovamente = +prompt();
+                if (jogarNovamente == 1){
+                    tempo[0] = 1; tempo[1] = 7; personagem.fome = 10; personagem.segurança = 5;
+                    continue
+                } else if (jogarNovamente == 2) {
+                    break
+                };
+    };
+    if (personagem.fome > 20){
+                console.log(`Você morreu! Motivo: Morreu de fome! (> 20)`);
+                console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+                jogarNovamente = +prompt();
+                if (jogarNovamente == 1){
+                    tempo[0] = 1; tempo[1] = 7; personagem.fome = 10; personagem.segurança = 5;
+                    continue
+                } else if (jogarNovamente == 2) {
+                    break
+                };
+    };
+    
+    while (tempo[0] == 2){
+    personagem.stats();
+    historias.escolhas();
 
-        historias.manhã7h();
+    // Variáveis de encerramento
+        if (personagem.segurança < 0){
+    console.log(`\nVocê morreu! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
+    console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+    jogarNovamente = +prompt();
+    if (jogarNovamente == 1){
+        tempo[0] = 1; tempo[1] = 7; personagem.fome = 10; personagem.segurança = 5;
+        continue
+    } else if (jogarNovamente == 2) {
+        break
+    };
+    };
+        if (personagem.fome > 20){
+    console.log(`Você morreu! Motivo: Morreu de fome! (> 20)`);
+    console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+    jogarNovamente = +prompt();
+    if (jogarNovamente == 1){
+        tempo[0] = 1; tempo[1] = 7; personagem.fome = 10; personagem.segurança = 5;
+        continue
+    } else if (jogarNovamente == 2) {
+        break
+    };
+    };
 
-        // Variáveis de aumentar o dia
-        adicionarHora.maisDia();
-  
+        while (tempo[0] == 3){
+        personagem.stats();
+        historias.escolhas();
 
         // Variáveis de encerramento
-        if (personagem.vida < 0){
-            console.log(`Game over! Motivo: sem vida! (< 0)`);
-            console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-            jogarNovamente = +prompt();
-            if (jogarNovamente == 1){
-                tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-                continue
-            } else if (jogarNovamente == 2) {
-                break
+            if (personagem.segurança < 0){
+        console.log(`\nVocê morreu! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
+        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+        jogarNovamente = +prompt();
+        if (jogarNovamente == 1){
+            tempo[0] = 1; tempo[1] = 7; personagem.fome = 10; personagem.segurança = 5;
+            continue
+        } else if (jogarNovamente == 2) {
+            break
+        };
             };
+            if (personagem.fome > 20){
+        console.log(`Você morreu! Motivo: Morreu de fome! (> 20)`);
+        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
+        jogarNovamente = +prompt();
+        if (jogarNovamente == 1){
+            tempo[0] = 1; tempo[1] = 7; personagem.fome = 10; personagem.segurança = 5;
+            continue
+        } else if (jogarNovamente == 2) {
+            break
         };
-
-        if (personagem.segurança < 0){
-            console.log(`Game over! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
-            console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-            jogarNovamente = +prompt();
-            if (jogarNovamente == 1){
-                tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-                continue
-            } else if (jogarNovamente == 2) {
-                break
             };
-        };
 
-        if (personagem.fome > 20){
-            console.log(`Game over! Motivo: Morreu de fome (kkk)! (> 20)`);
-            console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-            jogarNovamente = +prompt();
-            if (jogarNovamente == 1){
-                tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-                continue
-            } else if (jogarNovamente == 2) {
-                break
-            };
-        };
-
-    while (tempo[0] == 2){
-
-        personagem.stats();
-
-
-        tempo[1] = +prompt('bote uma hora: ')
-        personagem.vida = +prompt('bote um valor de vida: ') //alterar pra variaveis que modificam a vida
-        personagem.fome= +prompt('bote um valor de fome: ')
-        personagem.segurança = +prompt(`bote um valor de segurança (atual: ${personagem.segurança}): `)
-
-    // Variáveis de aumentar o dia
-    adicionarHora.maisDia();
-
-    // Variaveis de encerramento
-    if (personagem.vida < 0){
-        console.log(`Game over! Motivo: sem vida! (< 0)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    };
-
-    if (personagem.segurança < 0){
-        console.log(`Game over! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    };
-
-    if (personagem.fome > 20){
-        console.log(`Game over! Motivo: Morreu de fome (kkk)! (> 20)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    };
-
-    while (tempo[0] == 3){
-
-        personagem.stats();
-
-    // Variáveis de aumentar o dia
-    adicionarHora.maisDia();
-
-   // Variaveis de encerramento
-    if (personagem.vida < 0){
-        console.log(`Game over! Motivo: sem vida! (< 0)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    };
-
-    if (personagem.segurança < 0){
-        console.log(`Game over! Motivo: a proteção da sua casa foi pro brejo e os zumbis tomaram conta (x.x') Motivo: Segurança (< 0)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    };
-
-    if (personagem.fome > 20){
-        console.log(`Game over! Motivo: Morreu de fome (kkk)! (> 20)`);
-        console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
-        jogarNovamente = +prompt();
-        if (jogarNovamente == 1){
-            tempo[0] = 1; tempo[1] = 7;  personagem.vida = 10; personagem.fome = 15; personagem.segurança = 5;
-            continue
-        } else if (jogarNovamente == 2) {
-            break
-        };
-    };
-
-    // Encerramento do game
-    if (tempo[0] == 4){
+         // Encerramento do game
+            if (tempo[0] == 4){
         console.log('Parabéns!!! Você conseguiu chegar até o 4º dia e foi resgatado pelo helicóptero.');
         console.log('Deseja jogar novamente? 1. Sim 2. Não');
-        playagain = +prompt();
-        if (playagain == 1) { tempo[0] = 1; } else { break; }
+        jogarNovamente = +prompt();
+        if (jogarNovamente == 1) { tempo[0] = 1; } else { break; }
+            };
         };
     };
-    };
 };
-
-        // como fazer perguntas que impactem na hora ::::
-        // let escolha = +prompt('avance 1h digitando 1\navance 2h digitando 2')
-        // if (escolha == 1){
-        //     adicionarHora.maisHora(1)
-        //     console.log('adicionou-se 1 hora')
-        //     console.log(tempo[1])
-        // } else if (escolha == 2){
-        //     adicionarHora.maisHora(2)
-        //     console.log('adicionou-se 2 hora')
-        //     console.log(tempo[1])
-        // } // testar isso mais pra frente hein
