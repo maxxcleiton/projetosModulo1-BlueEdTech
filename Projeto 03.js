@@ -196,7 +196,7 @@ while (tempo[0] == 1){
 
     // Variáveis de encerramento
     if (personagem.segurança < 1){
-        console.log(`\nVocê morreu! A proteção da sua casa foi pro brejo e os zumbis tomaram conta. (Segurança < 0)`);
+        console.log(`\nVocê morreu! A proteção da sua casa foi pro brejo e os zumbis tomaram conta. (Segurança < 1)`);
         console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
         jogarNovamente = +prompt();
         if (jogarNovamente == 1){
@@ -223,7 +223,7 @@ while (tempo[0] == 1){
 
     // Variáveis de encerramento
         if (personagem.segurança < 1){
-            console.log(`\nVocê morreu! A proteção da sua casa foi pro brejo e os zumbis tomaram conta. (Segurança < 0)`);
+            console.log(`\nVocê morreu! A proteção da sua casa foi pro brejo e os zumbis tomaram conta. (Segurança < 1)`);
             console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
             jogarNovamente = +prompt();
             if (jogarNovamente == 1){
@@ -250,7 +250,7 @@ while (tempo[0] == 1){
 
         // Variáveis de encerramento
             if (personagem.segurança < 1){
-                console.log(`\nVocê morreu! A proteção da sua casa foi pro brejo e os zumbis tomaram conta. (Segurança < 0)`);
+                console.log(`\nVocê morreu! A proteção da sua casa foi pro brejo e os zumbis tomaram conta. (Segurança < 1)`);
                 console.log(`Você deseja jogar novamente? 1. Sim 2. Não`);
                 jogarNovamente = +prompt();
                 if (jogarNovamente == 1){
