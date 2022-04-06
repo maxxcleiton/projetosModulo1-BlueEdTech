@@ -71,46 +71,30 @@ let historias = {
             console.log(`\ntuuuu.........\ntuuuuuu.............\ntuuuuuuuuu....................
             \n-"Filho! onde você está? tudo está uma loucura! pessoas estão virando mortos vivos, eu estou em segurança com o presidente. Fique em casa! daqui a 3 dias um helicóptero vai te busc-" *qrrrrrrrr* *piiiiiiiii*
     *chamada perdida*`);
-
             console.log(`\n\nDeseja discar para mais alguém?
             1. Sim
             2. Não`);
-
             repetir = +prompt();
-
-            // if (repetir == 2){
-               // se eu quiser puxar uma funcao
-            // }
 
         } else if (decisao == 2){
             console.log(`\ntuuuuuuuuuuuu........\ntuuuuuuuuuuuuuuu............\ntuuuuuuuuuuuuuuuuuuuu..........
     *chamada perdida*`);
-
             console.log(`\n\nDeseja discar para mais alguém?
             1. Sim
             2. Não`);
-
             repetir = +prompt();
-            // if (repetir == 2){
-            // se eu quiser puxar uma funcao
-            // }
 
         } else if (decisao == 3){
             console.log(`\ntuuuuuuuu.....\ntuuuuuuuuuu......
             \n-"Maninho!!! você está vivo? meu Deus! os mortos estão vivos e atacando as pessoas, eu me reuni com um grupo de amigos e estamos num abrigo, papai disse que vai mandar um helicóptero para cá, tenho que sobreviver até lá, garanto que você faça o mesmo! *hurrrrrrrrrrrr*
     Meu Deus! um zumbi! preciso desligar aqui maninho, me liga quando puder!!"
     *chamada encerrada*`);
-
             console.log(`\n\nDeseja discar para mais alguém?
             1. Sim
             2. Não`);
-
             repetir = +prompt();
-            // if (repetir == 2){
-                //se eu quiser puxar uma funcao
-            // }
-        }
-    }
+        };
+    };
     },
     introdução: () => {
         console.log(`Você acorda numa manhã normal de domingo...
@@ -196,7 +180,7 @@ let historias = {
     },
 };
 
-let tempo = [1, 7] // Dia e Hora
+let tempo = [1, 7]; // Dia e Hora
 let jogarNovamente;
 
 // Início da história
