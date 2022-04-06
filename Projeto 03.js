@@ -301,7 +301,6 @@ while (tempo[0] == 1){
 
 
 // Fim de código.
-
 // Max Cleiton.
 // https://github.com/maxxcleiton
 // https://www.linkedin.com/in/maxcleiton/
