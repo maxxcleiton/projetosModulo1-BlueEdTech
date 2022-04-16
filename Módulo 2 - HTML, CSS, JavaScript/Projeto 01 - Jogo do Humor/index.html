@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <title>Jogo do Humor</title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <title>Robert's Transformations</title>
 </head>
-<body>
 
-    <div class="container">
-        <img src="./assets/background.png" alt="Twilight Photo Saga" style="width: 100%;">
-        <div class="centerText">Jogo de humor do Robert Pattinson</div>
+<body background="./assets/img/back.jpg">
+
+    <header>
+        <h1>Múltiplas camadas de Robert Pattinson</h1>
+        <p><br>Após tantas críticas pela sua atuação em Crepúsculo, decidi mostrar os vários papéis que o ator desempenhou com maestria,<br> mostrando que ele está longe daquele vampiro "que brilha" </p>
+        <p><br></p>
+    </header>
+    <div class="formas">
+        <!-- <div class="boxes"> -->
+        <img class="modelo" src="./assets/img/batman-dressed.jpg" alt="Robert Pattinson como The Batman">
+        <!-- </div> -->
+        <!-- <div class="boxes"> -->
+        <figcaption id="legenda"><h2>The Batman (2022)</h2></figcaption>
+        <!-- </div> -->
+        <button id="troca" type="button" onclick="mudarImagem()"><h2>Próximo personagem</h2></button>
+    
     </div>
 </body>
+    <script src="./assets/js/index.js"></script>
 </html>

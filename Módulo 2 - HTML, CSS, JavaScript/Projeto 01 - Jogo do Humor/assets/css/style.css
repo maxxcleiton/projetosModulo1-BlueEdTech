@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+}
+
+header {
+    color: aliceblue;
+    text-align: center;
+}
+
+#legenda {
+    color: aliceblue;
+}
+
+.formas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+button {
+    width: 20vw;
+    height: 4vh;
+}
