@@ -3,3 +3,6 @@ Esse é um jogo muito simples. Utilizaremos HTML, CSS e JavaScript para criar um
 
 Exemplo de projeto:
 https://blue-edtech.github.io/Codelab/jogo-do-humor/index.html
+
+Meu projeto (GitPages):
+https://maxxcleiton.github.io/projetoUm-modDois/
