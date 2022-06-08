@@ -1,3 +1,5 @@
+// Se você quiser jogar ele no seu VSCode, é necessário a instalação do "npm i prompt-sync" via terminal, na pasta onde este arquivo estiver.
+
 var prompt = require('prompt-sync')();
 console.clear();
 
