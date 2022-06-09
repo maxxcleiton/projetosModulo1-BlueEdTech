@@ -1,5 +1,5 @@
 # Projeto El Geladon Vanilla (Blue EdTech - Módulo 3 Projeto 1)
-
+<img src="./assets/mod3proj1-light.gif">
 ## Descrição:
 Criação de um site, com os métodos CRUD em funcionamento, utilizando JS Vanilla (puro) e consumindo uma API
 
